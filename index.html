@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Unwanted Tweets</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h4 class="text-center">Find Unwanted Tweets</h4>
+        <form action="list" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label for="consumer-key" class="col-sm-2 control-label">Consumer Key</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="consumer-key" name="consumer-key" placeholder="Enter Consumer Key" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="consumer-secret" class="col-sm-2 control-label">Consumer Secret</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="consumer-secret" name="consumer-secret" placeholder="Enter Consumer Secret" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="token" class="col-sm-2 control-label">Token</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="token" name="token" placeholder="Enter Token" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="consumer-key" class="col-sm-2 control-label">Token Secret</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="token-secret" name="token-secret" placeholder="Enter Token Secret" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="q" class="col-sm-2 control-label">Word</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="q" name="q" placeholder="Enter Word" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<html>
+
+<head>
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".delete").click(function () {
+                if (confirm('are you sure?')) {
+                    id = $(this).attr("id")
+                    $.ajax({
+                        url: "/delete?id=" + id,
+                        success: function (val) {
+                            if (val == "true") {
+                                $("#" + id).remove()
+                            }
+                        }
+                    })
+                }
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped">
+                        <thead>
+                            <th>ID</th>
+                            <th>Tweet</th>
+                            <th>Date</th>
+                            <th>Delete</th>
+                        </thead>
+                        <tbody>
+                            {{range .Tweets}}
+                            <tr id="{{.ID}}">
+                                <td>{{.ID}}</td>
+                                <td>
+                                    <a target="_blank" href="https://twitter.com/{{.User.ScreenName}}/status/{{.ID}}">{{.Text}}</a>
+                                </td>
+                                <td>{{.CreatedAt}}</td>
+                                <td>
+                                    <a class="delete" id="{{.ID}}">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            {{end}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
